@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<h1 align="middle"> Are Games Art? An Artist Appeal. </h1>
-	<h3 align="middle"> written by Sofi Naydenova, Mar 10, 2020. </h3>
-	<h6 align="middle"> 3 min read </h6>
-
+	<meta charset="utf-8">
+	<title> Организация отступов в вёрстке</title>
 </head>
 <body>
-<p align="middle"> Art is incredibly hard to define. The most popular thought on art is something which is made by a creative talented mind, expression of his/her feelings. <i> Something difficult and royal, which is sometimes hard to understand. Art should be educating, enlightening and empowering. It is made to forget about your shallow problems and daily routines. </i> </p>
-
-<p align="middle"> <strong>On contrary, what is a game? </strong> </p>
-<p align="middle"> Here is a general description: </p>
-
-<p align="middle"> <q> A game is a system in which players engage in an artificial conflict, defined by rules, that results in a quantifiable outcome. (Salen & Zimmerman, 2004). </q></p>
-
-<p align="middle"> Jesse Schell defines games as - </p>
-<p align="middle"> <q> a problem-solving activity, approached with a playful attitude.</q></p>
-
-<p align="middle">Sadly, there is nothing about art, aesthetic, perception, whatsoever. Only the combination of words <i>playful attitude</i> provides a hint that games can be made as an artistic intention. </p>
-<p align="middle">Even Hideo Koijima said in one of his interviews: </p>
-<p align="middle"> <q>Art is something that radiates the artist. If 100 people walk by and a single person is captivated by whatever that piece radiates, it is art. But video games are not trying capturing one person. A videogame should make sure that all 100 people that play that game should enjoy the service provided by that videogame. It is something of a service. It is not art. But I guess the way of providing service with that videogame is an artistic style, a form of art.</q> </p>
-
-<p align="middle">The core argument is that games are service which satisfies dozens of people. What a dark world we live in!
-It is truly comical — I have been on two sides. When I started as a fine artist, I was assured that only 0,0001% artist of all gets into commerce and is able to make a living out of his/her passion. Now, as a beginner game designer, I have to face the fact that games belong into the commercial world. </p>
-<p align="middle"> Guys, let us balance things out. </p>
-<p align="middle"> Why should artists dive into game industry? Instead of producing a painting, one could invent a whole world. It is a fantastic possibility to try out so many different areas: illustration, character design, modelling, writing/storytelling, coding (please do not start arguing here that code is not art ). It is worth to try making a 2d platformer with great art like Gris or a first person exploration game with your 3d art inside, or a visual novel! Remember, a game does not need to be about competition or accomplishment. It can contain a beautifully made artwork, music or a strong message. Besides, there are so many possibilities to create a game nowadays without using a single line of code. </p>
-<p align="middle">Let us talk about a game called <a target href="https://pawsmenu.itch.io/mooncharmer"> Mooncharmer.  </a> </p>
-<p align="middle"> Is it a game, you may ask? You cannot win here. But the thing is that you are actually playing with the main character, you control its behaviour. You can also leave the character walk in any direction you point and watch what happens. You are the one who defines if you accomplished something or not. There are boundaries, dictated by code, but it is you, who determines the rules. Is not that what we all need in games sometimes?!
+<h1>Правила организации отступов: как сделать вёрстку гибкой и не допустить ошибок</h1>
+<p> Вёрстка должна быть <b> максимально гибкой</b>. Даже если заказчик или работодатель говорит, что сайт статичный и не будет меняться, всё равно стоит делать так, будто завтра добавят несколько блоков текста, несколько элементов или что-то ещё.
 </p>
-<img width = "600" height = "400" src="https://miro.medium.com/max/1400/1*rnioVeNpGC4Yhe6ALRmNpA.png">
+<p>
+Нужно точно знать, <i>как поведут себя блоки при вёрстке, что произойдёт при изменениях </i>. И здесь помогают правила организации отступов. Они позволяют легко менять, улучшать и масштабировать вёрстку и уберегут вас от типичных ошибок.	
+</p>
+<h2> Содержание</h2>
+<p>Первая из частей - HTML. Это начальная стадия соблюдения кодстайла, ведь любой сайт вы начинаете писать именно с этого языка. Давайте посмотрим на основные правила:</p>
+<a href="#1"> <li> Основные принципы работы с отступами</li> </a>
+<a href="#2"> <li> Первый принцип: отступы от предыдущего к следующему</li> </a>
+<a href="#3"> <li> Второй принцип: отступы задаются только между соседями</li> </a>
+<a href="#4"> <li> Третий принцип: у последнего элемента группы обнуляем отступ</li> </a>
+
+<h3> <article id="1"> Основные принципы работы с отступами </article> </h3>
+<p>У любого сайта или документа есть так называемый поток — порядок вывода объектов в документе. В вёрстке этот поток идёт сверху вниз, слева направо. Именно поэтому, если какой-то элемент на макете находится справа, он должен в HTML-коде идти последним из своей группы.
+</p>
+<p>Исходя из этого, можно сразу сформулировать первый принцип.
+</p>
+<h3> <article id="2"> Отступы задаются от предыдущего элемента к следующему </article> </h3>
+<p> Это значит, что в вёрстке нужно стараться использовать CSS-свойства <b>margin-right </b> и <b>margin-bottom </b>, то есть отступ справа и отступ снизу. Проще говоря - избегаем отступов слева и сверху полностью.
+</p>
+<figure> <img src="1.ipg"> 
+<figcaption>На скриншоте видно, как правильно задавать отступы, — только справа и снизу (показано оранжевым)</figcaption>
+</figure>
+
+<p> Внешние отступы сверху и слева <b> (margin-top и margin-left)</b> заменяются на аналогичные внутренние отступы <b>(padding)</b> у родителя элементов.</p>
+<img src="2.jpg">
+<p> Получается, что блок не может сдвигаться благодаря своим отступам, — он делает это только за счёт соседних элементов (и сам двигает соседние).
+</p>
+<h3> <article id="3"> Отступы задаются только между соседними элементами в потоке </article> </h3>
+<p> Если у блока нет соседа с левой стороны — задавать ему отступ слева нельзя. То же самое касается любой из сторон.</p>
+<img src="3.jpg">
+<p>У обоих задан отступ снизу. Для первого списка это применимо, потому что есть сосед снизу — второй список. А для второго, не имеющего такого соседа, — отступа нет.
+</p>
+<figure> 
+<img src="4.jpg">
+<figcaption>На скриншоте — выпадение отступов. Отступ есть, но он не увеличивает размер «родителя» с голубым фоном, образуя лишний отступ — типичную ошибку вёрстки.</figcaption>
+</figure>
+
+<h3> <article id="4"> Последнему элементу группы нужно обнулять отступ </article> </h3>
+
+<p> Это легко сделать с помощью псевдоклассов в CSS. Например, есть псевдокласс <b>:last-child </b>, который позволяет выбрать последний элемент из группы (например, как в нашем случае: мы найдём последний элемент списка).</p>
+<p> С помощью <b>:last-child </b> мы обнуляем отступ у последнего <b> ul </b>, как показано в примере. Теперь всё работает как надо.</p>
+<img src="5.jpg">
+<p> Чтобы не создавать два селектора, можно написать короче, используя псевдокласс <b> :not </b>. Тут мы буквально говорим следующее: «Задай отступ всем ul, но не последнему».</p>
+<img src="6.jpg">
+
+<h3> Типичный пример: отступы в карточке </h3>
+<p> Рассмотрим типичный пример — реализацию карточки с контентом на сайте. Как здесь лучше поступить?</p>
+<p> В нашем примере самая простая карточка: с картинкой, заголовком и описанием. Как правильнее сделать отступы у заголовка и описания? На самом деле, всё очень просто: нужно применить принципы, о которых я рассказал.</p>
+<img src="7.jpg">
+<p> Нам достаточно обернуть весь текст карточки в блок и задать блоку внутренний отступ — padding. Так наша вёрстка будет соответствовать сразу трём принципам. А чтобы сделать отступ между заголовком и описанием, достаточно просто сделать отступ снизу — для заголовка.
+</p>
+<h3> Итог </h3>
+<p> Это основные правила организации отступов, которые помогут вам сделать вёрстку качественной и гибкой. Главное — начать им следовать. Со временем их соблюдение войдёт в привычку и вы начнёте сразу понимать, где можно допустить ошибку и как её избежать.
+</p>
+<br>
 
 
 
