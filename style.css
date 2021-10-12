@@ -1,0 +1,21 @@
+body {
+	background-image: url("blank.gif");
+	background-repeat: repeat;
+	margin: 0px;
+	text-align: center;
+}
+header {
+	
+}
+
+h1 {
+	color: magenta;
+	text-align: center;
+	font-size: 50px;
+	
+}
+.block {
+	border-width: 6px;
+	border-style: dotted;
+	border-color: pink;
+}
